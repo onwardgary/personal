@@ -10,10 +10,51 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
         <h1>Hi, this is Gary!</h1>
         
-        <script src="" async defer></script>
+        <div id="app">
+            <ul>
+                    <li v-for="(ingredient,i) in ingredients" :key="ingredient">{{ingredient}}({{i}})</li> <!--using the v-bind/key, it stores ingredient as the unique key value, not just the default storing, which is the position of the elemtn-->
+                    <button @click="ingredients.push('Chili')">Add Chili</button>
+            </ul>
+<hr>                
+            <template v-for="(ingredient, i) in ingredients">
+                <h1>{{ingredient}}</h1>
+                <p>{{i}}</p>
+            </template>
+<hr>
+            <ul>
+                <li v-for="pers in persons">{{pers.name}}</li>
+            </ul>
+<hr>
+            <ul>
+                <li v-for="pers in persons">
+                    <div v-for="(valu, fuck, i) in pers"> {{fuck}}: {{valu}} ({{i}})</div> <!--(1,2,3): 1 is the value, 2 is the name of the value, 3 is the index-->
+                </li>
+            </ul>
+<hr>
+                <div>
+                    <div v-for="n in 20">{{n}}</div><br>
+                    <span v-for="b in 5">{{b}}</span>
+                </div>
+    </div>
+
     </body>
+    <script>
+        new Vue ({
+            el:"#app",
+            data:{
+                ingredients:["steak","apple","milk"],
+                persons:[{name:"Max", age:23, race:"Caucasian"},
+                        {name:"Gary", age: 24, race:"Chinese"},
+                        {name:"John", age:26, race:"Malay"}
+                ]
+            }
+        })
+        
+        </script>
+
 </html>
