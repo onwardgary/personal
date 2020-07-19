@@ -9,36 +9,18 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        <div id="intro">
-            <h1>Hi, this is Gary!</h1>
+        <div class="container">        
+            <div id="intro">
+                <img src="gary-4.png">
+            </div>
+            
+            <div id="description">
+                <p style="font-size: large; font-weight: bolder;">
+                    A professional sales in technology industry. Fanatically passionate about startups, especially SaaS. 
+                </p>
+            </div>
         </div>
 
-        <div id="app">
-            <ul>
-                    <li v-for="(ingredient,i) in ingredients" :key="ingredient">{{ingredient}}({{i}})</li> <!--using the v-bind/key, it stores ingredient as the unique key value, not just the default storing, which is the position of the elemtn-->
-                    <button @click="ingredients.push('Chili')">Add Chili</button>
-            </ul>
-<hr>                
-            <template v-for="(ingredient, i) in ingredients">
-                <h1>{{ingredient}}</h1>
-                <p>{{i}}</p>
-            </template>
-<hr>
-            <ul>
-                <li v-for="pers in persons">{{pers.name}}</li>
-            </ul>
-<hr>
-            <ul>
-                <li v-for="pers in persons">
-                    <div v-for="(valu, fuck, i) in pers"> {{fuck}}: {{valu}} ({{i}})</div> <!--(1,2,3): 1 is the value, 2 is the name of the value, 3 is the index-->
-                </li>
-            </ul>
-<hr>
-                <div>
-                    <div v-for="n in 20">{{n}}</div><br>
-                    <span v-for="b in 5">{{b}}</span>
-                </div>
-    </div>
 
     </body>
     <script>
