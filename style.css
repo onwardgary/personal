@@ -12,7 +12,8 @@ body {
 }
 
 .rintro {
-    margin:auto
+    margin:auto;
+    padding:auto;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
