@@ -9,8 +9,10 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        <h1>Hi, this is Gary!</h1>
-        
+        <div id="intro">
+            <h1>Hi, this is Gary!</h1>
+        </div>
+
         <div id="app">
             <ul>
                     <li v-for="(ingredient,i) in ingredients" :key="ingredient">{{ingredient}}({{i}})</li> <!--using the v-bind/key, it stores ingredient as the unique key value, not just the default storing, which is the position of the elemtn-->
